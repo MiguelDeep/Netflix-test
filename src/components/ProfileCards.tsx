@@ -20,7 +20,7 @@ export default function ProfileCard() {
 
       <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
         <p className="text-sm text-gray-300 text-center font-medium group-hover:text-white transition">
-          Cláudio
+          Miguel
         </p>
         <span className="text-xl sm:text-2xl">😎</span>
       </div>
