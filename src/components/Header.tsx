@@ -2,7 +2,6 @@
 import React, { ComponentProps, useEffect, useState } from "react";
 import Image from "next/image";
 import Logo from "@/images/netflix (1).svg";
-import Profile from "@/images/Captura de tela 2025-06-11 225327.png";
 import { Search, Bell } from "lucide-react";
 
 interface PropsHeader extends ComponentProps<"header"> {
@@ -54,10 +53,10 @@ export default function Header({ ...props }: PropsHeader) {
           <Search size={24} />
           <Bell size={24} />
           <Image
-            src={Profile}
+            src={"https://rb.gy/g1pwyx"}
             alt="Imagem de Perfil da Netflix"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             className="rounded"
           />
         </nav>

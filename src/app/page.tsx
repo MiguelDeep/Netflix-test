@@ -1,57 +1,92 @@
-import Header from "@/components/Header";
-import { Play } from "lucide-react";
-import IconNetflix from "@/images/netflix.svg";
 import Image from "next/image";
-import Sections from "@/components/Sections";
-import Footer from "@/components/Footer";
+import bg from "@/images/bg.png";
+import Button from "@/components/Button";
+import Netflix from "@/images/netflix (1).svg";
+import FooterPageLogin from "@/components/FooterPageLogin";
+import InputForms from "@/components/InputForms";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
-      <div className="relative h-screen w-full overflow-hidden bg-black">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        >
-          <source src="/_Introduo_do_Meu_perfil.mp4" type="video/mp4" />
-          Seu navegador não suporta vídeos HTML5.
-        </video>
-        <div className="absolute inset-0  bg-opacity-50 z-10" />
-        <div className="absolute bottom-0 left-0 w-full h-60 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
-        <div className="relative z-30">
-          <Header />
-          <div className="p-8 text-white">
-            <div className="flex items-center mt-40 gap-4">
-              <Image src={IconNetflix} alt="icon Netflix" />
-              <p className="font-bold text-xl">F I L M E</p>
-            </div>
+      <div className="bg-transparent"></div>
+      <div className="relative h-screen w-full bg-black ">
+        <div className="absolute top-6 left-6 z-30">
+          <Link href={"/"}>
+          <Image
+            src={Netflix}
+            alt="Logo da Netflix"
+            className="md:ml-50 ml-auto   md:w-40 h-auto w-25"
+            priority
+          />
+          </Link>
+        </div>
 
-            <h1 className="text-4xl font-bold mt-60 mb-4">
-              A tragédia da Oceangate
-            </h1>
-            <p className="text-lg w-96 text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-              deleniti molestiae tenetur nobis iusto id necessitatibus! Aliquid
-              distinctio qui amet sunt. Fugit rerum aspernatur, alias fugiat
-              velit nostrum beatae fuga.
-            </p>
+        <Image
+          src={bg}
+          alt="Background"
+          fill
+          className="object-cover opacity-50"
+        />
 
-            <div className="mt-4 flex gap-4">
-              <button className="bg-white flex gap-4 text-black px-6 py-2 rounded hover:bg-gray-300 transition">
-                <Play /> Ver
-              </button>
-              <button className="bg-gray-700 text-white px-6 py-2 rounded hover:bg-gray-600 transition">
-                ℹ Mais informações
-              </button>
+        <div className="absolute inset-0 gap-20 md:bg-black/30 bg-black bg-opacity-60 z-10 " />
+
+        <div className="absolute z-20 inset-0 flex  items-center justify-center  ">
+          <form className="md:bg-black/50 bg-black bg-opacity-75 text-white px-10 py-8 pt-20 pb-20  rounded-md w-full max-w-md mx-auto">
+            <div className="flex flex-col space-y-4  ">
+              <h1 className="text-4xl font-bold">Sign In</h1>
+
+              <div className="flex flex-col space-y-4">
+                <InputForms type="email" placeholder="Email" />
+                <InputForms type="password" placeholder="Password" />
+
+                <Link
+                  href={"/browse"}
+                  type="submit"
+                  className="bg-red-600 text-center hover:bg-red-700 transition-colors duration-300 py-3 rounded text-white font-semibold"
+                >
+                  Sign In
+                </Link>
+                <h1 className="text-center">OR</h1>
+                <Button
+                  type="submit"
+                  className="bg-zinc-800 hover:bg-zinc-900 transition-colors duration-300 py-3 rounded text-white font-semibold"
+                  title="Use a Sign-in Code"
+                />
+                <h1 className="text-center">
+                  <a href="#" className="underline">
+                    Forget password
+                  </a>
+                </h1>
+              </div>
+
+              <div className="flex justify-between text-sm text-zinc-400">
+                <label className="text-xl">
+                  <input type="checkbox" className="mr-1" />
+                  Remember me
+                </label>
+              </div>
+
+              <p className="text-sm text-zinc-400">
+                New to Netflix?
+                <a href="#" className="text-white hover:underline">
+                  {" "}
+                  Sign up now
+                </a>
+              </p>
+
+              <p className="text-sm text-zinc-400">
+                This page is protected by Google reCAPTCHA to ensure you are not
+                a bot.
+                <a href="#" className="text-blue-600 underline ml-1">
+                  Learn more.
+                </a>
+              </p>
             </div>
-          </div>
+          </form>
         </div>
       </div>
-     <Sections/>
-     <Footer />
+      <FooterPageLogin />
     </div>
   );
 }
