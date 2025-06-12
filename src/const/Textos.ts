@@ -1,0 +1,1 @@
+export const Textos = ["Audiodescrição","Central de Ajuda","Cartão pré-pago","Imprensa","Relações com investidores","Carreiras" ,"Termos de uso","Privacidade","Avisos legais" ,"Preferências de cookies","Informações corporativas" ,"Entre em contato"]

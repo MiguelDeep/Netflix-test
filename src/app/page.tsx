@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import { Play } from "lucide-react";
 import IconNetflix from "@/images/netflix.svg";
 import Image from "next/image";
+import Sections from "@/components/Sections";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -48,9 +50,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="m-10">
-        <h1 className="font-bold">Minha Lista</h1>
-      </div>
+     <Sections/>
+     <Footer />
     </div>
   );
 }
