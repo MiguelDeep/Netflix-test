@@ -2,6 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Lock } from "lucide-react";
+
 
 export default function ProfileCard() {
   return (
@@ -24,7 +26,9 @@ export default function ProfileCard() {
         </p>
       </div>
 
-      <span className="text-gray-500 text-xl sm:text-2xl">🔒</span>
+      <span className="text-gray-500 text-xl sm:text-2xl">
+        <Lock size={25} />
+      </span>
     </div>
   );
 }

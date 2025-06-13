@@ -2,8 +2,9 @@
 import React, { ComponentProps, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Logo from "@/images/netflix (1).svg";
-import { Search, Bell, ChevronDown } from "lucide-react";
+import { Search, Bell, ChevronDown,Lock } from "lucide-react";
 import List from "./List";
+
 
 interface PropsHeader extends ComponentProps<"header"> {
   title?: string;
@@ -87,36 +88,40 @@ export default function Header({ ...props }: PropsHeader) {
                 <ul className="text-sm text-white">
                   <List>
                     {" "}
-                    <Image
+                    
+                    <span className="flex items-center gap-4"><Image
                       src="https://rb.gy/g1pwyx"
                       alt="Imagem de Perfil da Netflix"
                       width={30}
                       height={30}
                       className="rounded"
                     />
-                    <span>Miguel</span>
+                    Miguel</span>
+                    <Lock size={16} />
                   </List>
                   <List>
                     {" "}
-                    <Image
+                    <span className="flex items-center gap-4"><Image
                       src="https://rb.gy/g1pwyx"
                       alt="Imagem de Perfil da Netflix"
                       width={30}
                       height={30}
                       className="rounded"
                     />
-                    <span>Aureo</span>
+                    Aureo</span>
+                    <Lock size={16} />
                   </List>
                   <List >
                     {" "}
-                    <Image
+                   <span className="flex items-center gap-4"><Image
                       src="https://rb.gy/g1pwyx"
                       alt="Imagem de Perfil da Netflix"
                       width={30}
                       height={30}
                       className="rounded"
                     />
-                    <span>Claudio</span>
+                    Claudio</span>
+                    <Lock size={16} />
                   </List>
                   <List title="Gerir Perfis"/>
                   <List title="Transferir Perfil"/>
