@@ -22,7 +22,6 @@ export default function ProfileCard() {
         <p className="text-sm text-gray-300 text-center font-medium group-hover:text-white transition">
           Miguel
         </p>
-        <span className="text-xl sm:text-2xl">😎</span>
       </div>
 
       <span className="text-gray-500 text-xl sm:text-2xl">🔒</span>
