@@ -41,7 +41,7 @@ export default function Header({ ...props }: PropsHeader) {
   return (
     <header
       {...props}
-      className={`fixed top-0 left-0 w-full z-30 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 w-full z-30 transition-colors duration-300  ${
         isScrolled ? "bg-black" : "bg-transparent"
       }`}
     >

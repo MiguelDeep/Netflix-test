@@ -1,5 +1,5 @@
 "use client";
-import React, { ComponentProps, useRef } from "react";
+import React, { ComponentProps, useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface PropsContainerCards extends ComponentProps<"div"> {
@@ -8,6 +8,7 @@ interface PropsContainerCards extends ComponentProps<"div"> {
 
 export default function ContainerCards({ children, ...props }: PropsContainerCards) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isAtStart, setIsAtStart] = useState(true);
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -19,15 +20,23 @@ export default function ContainerCards({ children, ...props }: PropsContainerCar
     });
   };
 
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    setIsAtStart(scrollRef.current.scrollLeft < 10);
+  };
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="relative w-full overflow-hidden px-4">
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-12 z-10 bg-gradient-to-r" />
-
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-12 z-10 bg-gradient-to-l " />
-
+    <div className="relative w-full overflow-hidden z-0"> 
       <button
         onClick={() => scroll("left")}
-        className=" md:flex absolute left-2 top-1/2 -translate-y-1/2 p-2 z-20 bg-black/30 hover:bg-black text-white rounded-full"
+        className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 p-2 z-10 hover:bg-black/35 h-36 items-center text-white"
       >
         <ChevronLeft size={28} />
       </button>
@@ -35,12 +44,14 @@ export default function ContainerCards({ children, ...props }: PropsContainerCar
       <div
         ref={scrollRef}
         {...props}
-        className="z-0 flex overflow-x-auto overflow-y-hidden scrollbar-hide py-4 scroll-smooth snap-x snap-mandatory gap-4"
+        className="z-0 flex overflow-x-auto overflow-y-hidden scrollbar-hide py-4 scroll-smooth gap-4"
       >
         {React.Children.map(children, (child, i) => (
           <div
             key={i}
-            className="z-0 snap-start shrink-0 w-[160px] sm:w-[180px] md:w-[220px] lg:w-[240px]"
+            className={`shrink-0 w-[160px] sm:w-[180px] md:w-[220px] lg:w-[240px] ${
+              i === 0 && isAtStart ? "ml-20" : ""
+            }`}
           >
             {child}
           </div>
@@ -49,7 +60,7 @@ export default function ContainerCards({ children, ...props }: PropsContainerCar
 
       <button
         onClick={() => scroll("right")}
-        className="md:flex absolute right-2 top-1/2 -translate-y-1/2 p-2 z-20 bg-black/30 hover:bg-black text-white rounded-full"
+        className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 p-2 z-10 hover:bg-black/35 text-white h-36 items-center"
       >
         <ChevronRight size={28} />
       </button>

@@ -7,8 +7,9 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div>
-      <div className="relative h-screen w-full overflow-hidden bg-neutral-900">
+    <div className="flex flex-col min-h-screen bg-[#171717]">
+      {/* Hero com vídeo */}
+      <div className="relative h-screen w-full overflow-hidden">
         <video
           autoPlay
           loop
@@ -19,8 +20,9 @@ export default function Home() {
           <source src="/_Introduo_do_Meu_perfil.mp4" type="video/mp4" />
           Seu navegador não suporta vídeos HTML5.
         </video>
-        <div className="absolute inset-0  bg-opacity-50 z-10" />
-        <div className="absolute bottom-0 left-0 w-full h-60 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
+
+        <div className="absolute inset-0 bg-black/50 z-10" />
+
         <div className="relative z-30">
           <Header />
           <div className="p-8 text-white">
@@ -29,9 +31,7 @@ export default function Home() {
               <p className="font-bold text-xl">F I L M E</p>
             </div>
 
-            <h1 className="text-4xl font-bold mt-60 mb-4">
-              A tragédia da Oceangate
-            </h1>
+            <h1 className="text-4xl font-bold mt-60 mb-4">A tragédia da Oceangate</h1>
             <p className="text-lg w-96 text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
               deleniti molestiae tenetur nobis iusto id necessitatibus! Aliquid
@@ -49,9 +49,17 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#171717] via-[#171717]/50 to-transparent z-20 pointer-events-none" />
       </div>
-     <Sections/>
-     <Footer />
+
+      {/* Conteúdo principal abaixo do vídeo */}
+      <main className="relative z-30 -mt-16">
+        <Sections />
+      </main>
+
+      {/* Rodapé fixado ao final da página */}
+      <Footer />
     </div>
   );
 }

@@ -4,52 +4,52 @@ import ContainerCards from "./ContainerCards";
 
 export default function Sections() {
   return (
-    <div className="ml-10 mr-10 p-6 ">
-      <h1 className="font-bold mb-2">A minha Lista</h1>
+    <div className="relative inset-0 z-20 ">
+      <h1 className="font-bold mb-2 pl-20">A minha Lista</h1>
       <ContainerCards>
         {Array.from({ length: 10 }).map((_, i) => (
           <Cards key={i} />
         ))}
       </ContainerCards>
-      <h1 className="font-bold mb-2">Originais Netflix</h1>
+      <h1 className="font-bold mb-2 pl-20">Originais Netflix</h1>
       <ContainerCards>
-        {Array.from({ length: 6 }).map((_, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
           <Cards key={i} />
         ))}
       </ContainerCards>
-      <h1 className="font-bold mb-2">Tendência geral</h1>
+      <h1 className="font-bold mb-2 pl-20">Tendência geral</h1>
       <ContainerCards>
-        {Array.from({ length: 6 }).map((_, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
           <Cards key={i} />
         ))}
       </ContainerCards>
-      <h1 className="font-bold mb-2">Melhores Filmes</h1>
+      <h1 className="font-bold mb-2 pl-20">Melhores Filmes</h1>
       <ContainerCards>
-        {Array.from({ length: 6 }).map((_, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
           <Cards key={i} />
         ))}
       </ContainerCards>
-      <h1 className="font-bold mb-2">Explosivos</h1>
+      <h1 className="font-bold mb-2 pl-20">Explosivos</h1>
       <ContainerCards>
-        {Array.from({ length: 6 }).map((_, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
           <Cards key={i} />
         ))}
       </ContainerCards>
-      <h1 className="font-bold mb-2">Rir é o melhor remédio</h1>
+      <h1 className="font-bold mb-2 pl-20">Rir é o melhor remédio</h1>
       <ContainerCards>
-        {Array.from({ length: 6 }).map((_, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
           <Cards key={i} />
         ))}
       </ContainerCards>
-      <h1 className="font-bold mb-2">Românticos</h1>
+      <h1 className="font-bold mb-2 pl-20">Românticos</h1>
       <ContainerCards>
-        {Array.from({ length: 6 }).map((_, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
           <Cards key={i} />
         ))}
       </ContainerCards>
-      <h1 className="font-bold mb-2">Educativo, histórico e biográfico</h1>
+      <h1 className="font-bold mb-2 pl-20">Educativo, histórico e biográfico</h1>
       <ContainerCards>
-        {Array.from({ length: 6 }).map((_, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
           <Cards key={i} />
         ))}
       </ContainerCards>
