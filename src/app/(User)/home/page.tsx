@@ -53,12 +53,10 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#171717] via-[#171717]/50 to-transparent z-20 pointer-events-none" />
       </div>
 
-      {/* Conteúdo principal abaixo do vídeo */}
-      <main className="relative z-30 -mt-16">
+      <main className="relative z-30 -mt-4">
         <Sections />
       </main>
 
-      {/* Rodapé fixado ao final da página */}
       <Footer />
     </div>
   );
