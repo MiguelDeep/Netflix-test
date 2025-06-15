@@ -8,7 +8,7 @@ import TextFooter from "./TextFooter";
 
 export default function Footer() {
   return (
-    <footer className="text-gray-400 mt-20 px-10 md:px-40">
+    <footer className="text-gray-400 mt-20 px-10 md:px-40 overflow-auto">
       <div className="flex gap-6 mb-6">
         <Image
           src={Facebook}

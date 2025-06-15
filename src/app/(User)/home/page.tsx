@@ -1,11 +1,12 @@
 "use client";
 
 import Header from "@/components/Header";
-import { Play } from "lucide-react";
+import { Info } from "lucide-react";
 import IconNetflix from "@/images/netflix.svg";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import SectionsMovies from "@/components/SectionsMovies";
+import play from "@/images/icons8_play.ico"
 
 export default function Home() {
   return (
@@ -41,11 +42,12 @@ export default function Home() {
             </p>
 
             <div className="mt-4 flex gap-4">
-              <button className="bg-white flex gap-4 text-black px-6 py-2 rounded hover:bg-gray-300 transition">
-                <Play  className="text-black" /> Ver
+              <button className="bg-white flex gap-4 text-black px-6 py-2 rounded hover:bg-gray-300 transition items-center">
+                <Image src={play} alt="play" width={20} height={20}/> Ver
               </button>
-              <button className="bg-gray-700 text-white px-6 py-2 rounded hover:bg-gray-600 transition">
-                ℹ Mais informações
+              <button className="bg-gray-700/60 text-white px-6 py-2 rounded hover:bg-gray-600 transition flex items-center gap-4">
+                 <Info />
+                Mais informações
               </button>
             </div>
           </div>
@@ -54,7 +56,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#171717] via-[#171717]/50 to-transparent z-20 pointer-events-none" />
       </div>
 
-      <main className="relative z-30 -mt-4">
+      <main className="relative z-30 mt-4">
         <SectionsMovies />
       </main>
 
