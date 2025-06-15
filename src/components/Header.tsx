@@ -2,9 +2,11 @@
 import React, { ComponentProps, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Logo from "@/images/netflix (1).svg";
-import {  Bell, ChevronDown, Lock } from "lucide-react";
+import { Bell, ChevronDown, Lock } from "lucide-react";
 import List from "./List";
-import SearchBarToggle from "./SearchBar";
+import SearchBar from "./SearchBar";
+import ResponsiveMenu from "./ResponsiveMenu";
+import Notifications from "./Notifications";
 
 interface PropsHeader extends ComponentProps<"header"> {
   title?: string;
@@ -56,22 +58,20 @@ export default function Header({ ...props }: PropsHeader) {
             height={50}
             className="mr-10"
           />
-          <div className="gap-6 lg:gap-10 hidden md:flex text-white text-sm font-medium">
-            <p>Página Inicial</p>
-            <p>Séries</p>
-            <p>Filmes</p>
-            <p>Jogos</p>
-            <p>Mais recentes</p>
-            <p>Minha Lista</p>
-            <p>Idiomas</p>
-          </div>
+          <ResponsiveMenu />
         </nav>
 
         <nav className="flex items-center gap-6 text-white relative">
           <div className="flex justify-end ">
-            <SearchBarToggle />
+            <SearchBar />
           </div>
-          <Bell size={24} />
+          <div className="relative group">
+            <Bell size={24} className="text-white cursor-pointer" />
+
+            <div className="absolute top-full mt-2 right-0 w-96 bg-zinc-800  text-white text-sm rounded-md p-4 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50">
+              <Notifications />
+            </div>
+          </div>
           <div
             className="relative cursor-pointer flex items-center gap-1"
             onClick={() => setDropdownOpen(!dropdownOpen)}

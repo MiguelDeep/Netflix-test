@@ -26,7 +26,7 @@ async function getMovies(url: string): Promise<Movie[]> {
   return data.results;
 }
 
-export default function Sections() {
+export default function SectionsMovies() {
   const [sections, setSections] = useState<SectionsMap>({});
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

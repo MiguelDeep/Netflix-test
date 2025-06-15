@@ -4,8 +4,8 @@ import Header from "@/components/Header";
 import { Play } from "lucide-react";
 import IconNetflix from "@/images/netflix.svg";
 import Image from "next/image";
-import Sections from "@/components/Sections";
 import Footer from "@/components/Footer";
+import SectionsMovies from "@/components/SectionsMovies";
 
 export default function Home() {
   return (
@@ -55,7 +55,7 @@ export default function Home() {
       </div>
 
       <main className="relative z-30 -mt-4">
-        <Sections />
+        <SectionsMovies />
       </main>
 
       <Footer />

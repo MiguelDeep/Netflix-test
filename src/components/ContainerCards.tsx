@@ -20,7 +20,7 @@ export default function ContainerCards({ children, ...props }: PropsContainerCar
     });
   };
 
-  const handleScroll = () => {
+  const handleScroll: () => void = () => {
     if (!scrollRef.current) return;
     setIsAtStart(scrollRef.current.scrollLeft < 10);
   };
