@@ -3,6 +3,7 @@ import React from "react";
 import { ChevronDown, Play, Plus } from "lucide-react";
 import Image from "next/image";
 
+
 type Props = {
   movie: {
     id: number;
