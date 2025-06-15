@@ -6,9 +6,13 @@ import IconNetflix from "@/images/netflix.svg";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import SectionsMovies from "@/components/SectionsMovies";
-import play from "@/images/icons8_play.ico"
+import play from "@/images/icons8_play.ico";
+
+
 
 export default function Home() {
+
+
   return (
     <div className="flex flex-col min-h-screen bg-[#171717]">
       <div className="relative h-screen w-full overflow-hidden">
@@ -25,6 +29,7 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black/50 z-10" />
 
+
         <div className="relative z-30">
           <Header />
           <div className="p-8 text-white">
@@ -33,7 +38,9 @@ export default function Home() {
               <p className="font-bold text-xl">F I L M E</p>
             </div>
 
-            <h1 className="text-4xl font-bold mt-60 mb-4">A tragédia da Oceangate</h1>
+            <h1 className="text-4xl font-bold mt-60 mb-4">
+              A tragédia da Oceangate
+            </h1>
             <p className="text-lg w-96 text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
               deleniti molestiae tenetur nobis iusto id necessitatibus! Aliquid
@@ -43,10 +50,11 @@ export default function Home() {
 
             <div className="mt-4 flex gap-4">
               <button className="bg-white flex gap-4 text-black px-6 py-2 rounded hover:bg-gray-300 transition items-center">
-                <Image src={play} alt="play" width={20} height={20}/> <span className="font-bold">Ver</span>
+                <Image src={play} alt="play" width={20} height={20} />
+                <span className="font-bold">Ver</span>
               </button>
               <button className="bg-gray-700/60 text-white px-6 py-2 rounded hover:bg-gray-600 transition flex items-center gap-4">
-                 <Info />
+                <Info />
                 Mais informações
               </button>
             </div>

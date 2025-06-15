@@ -1,16 +1,24 @@
 "use client";
-import { useState } from "react";
+import React from "react";
 
 interface Props {
   type: string;
   placeholder: string;
   name?: string;
   required?: boolean;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function InputForms({ type, placeholder, name, required }: Props) {
-  const [value, setValue] = useState("");
-  const [touched, setTouched] = useState(false);
+export default function InputForms({
+  type,
+  placeholder,
+  name,
+  required,
+  value,
+  onChange,
+}: Props) {
+  const [touched, setTouched] = React.useState(false);
 
   const hasError = touched && value.trim() === "";
 
@@ -19,9 +27,9 @@ export default function InputForms({ type, placeholder, name, required }: Props)
       <input
         type={type}
         name={name}
-        value={value}
         required={required}
-        onChange={(e) => setValue(e.target.value)}
+        value={value}
+        onChange={onChange}
         onBlur={() => setTouched(true)}
         className={`
           peer w-full px-4 pt-6 pb-2 text-white bg-zinc-800 rounded border 

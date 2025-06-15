@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { ComponentProps, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Logo from "@/images/netflix (1).svg";
@@ -7,6 +7,7 @@ import List from "./List";
 import SearchBar from "./SearchBar";
 import ResponsiveMenu from "./ResponsiveMenu";
 import Notifications from "./Notifications";
+import { useRouter } from "next/navigation";
 
 interface PropsHeader extends ComponentProps<"header"> {
   title?: string;
@@ -17,9 +18,23 @@ export default function Header({ ...props }: PropsHeader) {
   const [hasMounted, setHasMounted] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const logout = () => {
+    localStorage.removeItem("isLoggedIn");
+    router.push("/");
+  };
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn !== "true") {
+      router.push("/");
+    }
+  }, [router]);
 
   useEffect(() => {
     setHasMounted(true);
+
     const handleScroll = () => setIsScrolled(window.scrollY > 0);
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -43,7 +58,7 @@ export default function Header({ ...props }: PropsHeader) {
   return (
     <header
       {...props}
-      className={`fixed top-0 left-0 w-full z-30 transition-colors duration-300  ${
+      className={`fixed top-0 left-0 w-full z-30 transition-colors duration-300 ${
         isScrolled ? "bg-black" : "bg-transparent"
       }`}
     >
@@ -62,16 +77,16 @@ export default function Header({ ...props }: PropsHeader) {
         </nav>
 
         <nav className="flex items-center gap-6 text-white relative">
-          <div className="flex justify-end ">
+          <div className="flex justify-end">
             <SearchBar />
           </div>
           <div className="relative group">
             <Bell size={24} className="text-white cursor-pointer" />
-
-            <div className="absolute top-full mt-2 right-0 w-96 bg-zinc-800  text-white text-sm rounded-md p-4 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50">
+            <div className="absolute top-full mt-2 right-0 w-96 bg-zinc-800 text-white text-sm rounded-md p-4 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50">
               <Notifications />
             </div>
           </div>
+
           <div
             className="relative cursor-pointer flex items-center gap-1"
             onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -85,15 +100,15 @@ export default function Header({ ...props }: PropsHeader) {
               className="rounded"
             />
             <ChevronDown size={18} />
+
             {dropdownOpen && (
-              <div className="absolute right-0 mt-96 w-56 bg-black rounded shadow-lg z-30 py-2">
+              <div className="absolute right-0  w-56 bg-black rounded shadow-lg z-30 py-2 mt-96">
                 <ul className="text-sm text-white">
                   <List>
-                    {" "}
                     <span className="flex items-center gap-4">
                       <Image
                         src="https://rb.gy/g1pwyx"
-                        alt="Imagem de Perfil da Netflix"
+                        alt="Perfil"
                         width={30}
                         height={30}
                         className="rounded"
@@ -103,11 +118,10 @@ export default function Header({ ...props }: PropsHeader) {
                     <Lock size={16} />
                   </List>
                   <List>
-                    {" "}
                     <span className="flex items-center gap-4">
                       <Image
                         src="https://rb.gy/g1pwyx"
-                        alt="Imagem de Perfil da Netflix"
+                        alt="Perfil"
                         width={30}
                         height={30}
                         className="rounded"
@@ -117,11 +131,10 @@ export default function Header({ ...props }: PropsHeader) {
                     <Lock size={16} />
                   </List>
                   <List>
-                    {" "}
                     <span className="flex items-center gap-4">
                       <Image
                         src="https://rb.gy/g1pwyx"
-                        alt="Imagem de Perfil da Netflix"
+                        alt="Perfil"
                         width={30}
                         height={30}
                         className="rounded"
@@ -135,7 +148,9 @@ export default function Header({ ...props }: PropsHeader) {
                   <List title="Conta" />
                   <List title="Centro de Assistência" />
                   <hr className="border-gray-600 my-2" />
-                  <List title="Sair da Netflix"></List>
+                  <li className="px-4 py-2 hover:bg-zinc-700 " onClick={logout}>
+                    Sair da Netflix
+                  </li>
                 </ul>
               </div>
             )}

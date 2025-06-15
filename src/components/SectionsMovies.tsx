@@ -4,7 +4,7 @@ import Cards from "./Cards";
 import ContainerCards from "./ContainerCards";
 import api from "@/services/apiFilmes";
 import MovieModal from "./MovieModal";
-import ListaExplorar from "./ExplorarMore";
+import ExplorarMore from "./ExplorarMore";
 
 type Movie = {
   id: number;
@@ -87,7 +87,7 @@ export default function SectionsMovies() {
     <div className="relative inset-0 z-20 space-y-8">
       {Object.entries(sections).map(([title, movies]) => (
         <div key={title}>
-          <ListaExplorar title={title || ""} />
+          <ExplorarMore title={title || ""} />
 
           <ContainerCards>
             {movies.map((movie: Movie) => (

@@ -2,7 +2,7 @@
 
 import { ArrowRight } from 'lucide-react';
 
-export default function ListaHeader({ title }: { title: string }) {
+export default function ExplorarMore({ title }: { title: string }) {
   return (
     <div className="pl-20">
       <div className="inline-block group relative">
