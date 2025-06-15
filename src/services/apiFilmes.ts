@@ -1,5 +1,5 @@
-const BASE_URL = 'https://api.themoviedb.org/3'
 //const BASE_URL = 'https://api.themoviedb.org/3/trending/all/week?api_key=2fb4a222a0c14842ce6c83535c782233&language=en-US'
+const BASE_URL = 'https://api.themoviedb.org/3'
 
 const API_KEY = "2fb4a222a0c14842ce6c83535c782233"
 

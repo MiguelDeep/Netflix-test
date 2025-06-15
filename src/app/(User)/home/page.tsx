@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/Header";
 import { Play } from "lucide-react";
 import IconNetflix from "@/images/netflix.svg";
@@ -8,7 +10,6 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-[#171717]">
-      {/* Hero com vídeo */}
       <div className="relative h-screen w-full overflow-hidden">
         <video
           autoPlay
@@ -41,7 +42,7 @@ export default function Home() {
 
             <div className="mt-4 flex gap-4">
               <button className="bg-white flex gap-4 text-black px-6 py-2 rounded hover:bg-gray-300 transition">
-                <Play /> Ver
+                <Play  className="text-black" /> Ver
               </button>
               <button className="bg-gray-700 text-white px-6 py-2 rounded hover:bg-gray-600 transition">
                 ℹ Mais informações
