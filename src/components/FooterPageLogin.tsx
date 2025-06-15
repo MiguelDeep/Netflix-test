@@ -3,7 +3,7 @@ import FooterContactsLinks from "./FooterContactsLinks";
 
 export default function FooterPageLogin() {
   return (
-    <footer className="text-gray-400 mt-20 px-6 md:px-40 md:bg-black bg-zinc-900">
+    <footer className="text-gray-400  px-6 md:px-40 md:bg-black bg-zinc-900">
       <div className="max-w-6xl mx-auto p-10">
         <h1 className="pb-6 text-sm">
           Questions ?

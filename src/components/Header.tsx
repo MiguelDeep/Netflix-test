@@ -2,9 +2,9 @@
 import React, { ComponentProps, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Logo from "@/images/netflix (1).svg";
-import { Search, Bell, ChevronDown,Lock } from "lucide-react";
+import {  Bell, ChevronDown, Lock } from "lucide-react";
 import List from "./List";
-
+import SearchBarToggle from "./SearchBar";
 
 interface PropsHeader extends ComponentProps<"header"> {
   title?: string;
@@ -68,7 +68,9 @@ export default function Header({ ...props }: PropsHeader) {
         </nav>
 
         <nav className="flex items-center gap-6 text-white relative">
-          <Search size={24} />
+          <div className="flex justify-end ">
+            <SearchBarToggle />
+          </div>
           <Bell size={24} />
           <div
             className="relative cursor-pointer flex items-center gap-1"
@@ -88,49 +90,52 @@ export default function Header({ ...props }: PropsHeader) {
                 <ul className="text-sm text-white">
                   <List>
                     {" "}
-                    
-                    <span className="flex items-center gap-4"><Image
-                      src="https://rb.gy/g1pwyx"
-                      alt="Imagem de Perfil da Netflix"
-                      width={30}
-                      height={30}
-                      className="rounded"
-                    />
-                    Miguel</span>
+                    <span className="flex items-center gap-4">
+                      <Image
+                        src="https://rb.gy/g1pwyx"
+                        alt="Imagem de Perfil da Netflix"
+                        width={30}
+                        height={30}
+                        className="rounded"
+                      />
+                      Miguel
+                    </span>
                     <Lock size={16} />
                   </List>
                   <List>
                     {" "}
-                    <span className="flex items-center gap-4"><Image
-                      src="https://rb.gy/g1pwyx"
-                      alt="Imagem de Perfil da Netflix"
-                      width={30}
-                      height={30}
-                      className="rounded"
-                    />
-                    Aureo</span>
+                    <span className="flex items-center gap-4">
+                      <Image
+                        src="https://rb.gy/g1pwyx"
+                        alt="Imagem de Perfil da Netflix"
+                        width={30}
+                        height={30}
+                        className="rounded"
+                      />
+                      Aureo
+                    </span>
                     <Lock size={16} />
                   </List>
-                  <List >
+                  <List>
                     {" "}
-                   <span className="flex items-center gap-4"><Image
-                      src="https://rb.gy/g1pwyx"
-                      alt="Imagem de Perfil da Netflix"
-                      width={30}
-                      height={30}
-                      className="rounded"
-                    />
-                    Claudio</span>
+                    <span className="flex items-center gap-4">
+                      <Image
+                        src="https://rb.gy/g1pwyx"
+                        alt="Imagem de Perfil da Netflix"
+                        width={30}
+                        height={30}
+                        className="rounded"
+                      />
+                      Claudio
+                    </span>
                     <Lock size={16} />
                   </List>
-                  <List title="Gerir Perfis"/>
-                  <List title="Transferir Perfil"/>
-                  <List title="Conta"/>
-                  <List title="Centro de Assistência" /> 
+                  <List title="Gerir Perfis" />
+                  <List title="Transferir Perfil" />
+                  <List title="Conta" />
+                  <List title="Centro de Assistência" />
                   <hr className="border-gray-600 my-2" />
-                  <List title="Sair da Netflix">
-                    
-                  </List>
+                  <List title="Sair da Netflix"></List>
                 </ul>
               </div>
             )}

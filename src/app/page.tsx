@@ -13,12 +13,12 @@ export default function Home() {
       <div className="relative h-screen w-full bg-black ">
         <div className="absolute top-6 left-6 z-30">
           <Link href={"/"}>
-          <Image
-            src={Netflix}
-            alt="Logo da Netflix"
-            className="md:ml-50 ml-auto   md:w-40 h-auto w-25"
-            priority
-          />
+            <Image
+              src={Netflix}
+              alt="Logo da Netflix"
+              className="md:ml-50 ml-auto   md:w-40 h-auto w-25"
+              priority
+            />
           </Link>
         </div>
 
@@ -37,9 +37,18 @@ export default function Home() {
               <h1 className="text-4xl font-bold">Sign In</h1>
 
               <div className="flex flex-col space-y-4">
-                <InputForms type="email" placeholder="Email" />
-                <InputForms type="password" placeholder="Password" />
-
+                <InputForms
+                  type="email"
+                  placeholder="Email or mobile number"
+                  name="email"
+                  required
+                />
+                <InputForms
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  required
+                />
                 <Link
                   href={"/browse"}
                   type="submit"
