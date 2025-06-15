@@ -43,7 +43,7 @@ export default function Home() {
 
             <div className="mt-4 flex gap-4">
               <button className="bg-white flex gap-4 text-black px-6 py-2 rounded hover:bg-gray-300 transition items-center">
-                <Image src={play} alt="play" width={20} height={20}/> Ver
+                <Image src={play} alt="play" width={20} height={20}/> <span className="font-bold">Ver</span>
               </button>
               <button className="bg-gray-700/60 text-white px-6 py-2 rounded hover:bg-gray-600 transition flex items-center gap-4">
                  <Info />
